@@ -1,15 +1,29 @@
 # Azure 3-Tier Cloud Project
 
 ## Project Overview
-This project demonstrates a full Azure 3-tier cloud architecture using:
 
-- Frontend Web App
-- Backend API
-- Azure SQL Database
+This project demonstrates a real-world Azure 3-tier cloud architecture designed to simulate how modern cloud applications are deployed and connected in production environments.
+
+The architecture consists of:
+
+- A frontend web application hosted on Azure App Service
+- A backend Node.js API responsible for handling requests and database communication
+- An Azure SQL Database used for persistent cloud data storage
+
+The frontend communicates with the backend API, which securely connects to the Azure SQL Database using environment variables and cloud networking configurations.
+
+This project was built to develop hands-on experience with:
+
+- Cloud infrastructure deployment
 - Azure App Services
-- GitHub Deployment
+- Backend API development
+- SQL database connectivity
+- Environment variable management
+- Cloud troubleshooting and debugging
+- GitHub version control and project documentation
 
-The project successfully connects a frontend application to a backend API and Azure SQL Database.
+The application successfully demonstrates end-to-end communication between all three layers of the cloud architecture:
+Frontend → Backend API → Azure SQL Database.
 
 ---
 
