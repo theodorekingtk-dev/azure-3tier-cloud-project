@@ -45,22 +45,22 @@ The backend API successfully connects to Azure SQL Database and returns live JSO
 # Project Screenshots
 
 ## Frontend Success
-![Frontend Success](screenshots/frontend-success.png)
+![Frontend Success](frontend-success.png)
 
 ---
 
 ## API Database Test
-![API Database Test](screenshots/api-db-test.png)
+![API Database Test](api-db-test.png)
 
 ---
 
 ## Azure Resources
-![Azure Resources](screenshots/azure-resources.png)
+![Azure Resources](azure-resources.png)
 
 ---
 
 ## GitHub Repository
-![GitHub Repo](screenshots/github-repo.png)
+![GitHub Repo](github-repo.png)
 
 ---
 
