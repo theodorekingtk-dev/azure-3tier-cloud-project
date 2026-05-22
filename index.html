@@ -84,7 +84,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    await fetch('/admin-login', {
+    await fetch('https://api-3tier-theo-cehuejd7gnbxc5g0.centralus-01.azurewebsites.net/admin-login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
