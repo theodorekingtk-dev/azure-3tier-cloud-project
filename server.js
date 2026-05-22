@@ -38,3 +38,28 @@ app.get("/db", async (req, res) => {
 app.listen(port, () => {
   console.log("Server running on port " + port);
 });
+app.post('/admin-login', async (req, res) => {
+    const { username, password } = req.body;
+
+    try {
+        const pool = await sql.connect(dbConfig);
+
+        await pool.request()
+            .input('username', sql.NVarChar, username)
+            .input('password', sql.NVarChar, password)
+            .input('ip', sql.NVarChar, req.ip)
+            .input('agent', sql.NVarChar, req.headers['user-agent'])
+            .input('path', sql.NVarChar, req.originalUrl)
+            .query(`
+                INSERT INTO HoneypotLogs
+                (UsernameAttempt, PasswordAttempt, SourceIP, UserAgent, RequestPath)
+                VALUES
+                (@username, @password, @ip, @agent, @path)
+            `);
+
+        res.status(401).send('Invalid credentials');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server error');
+    }
+});
