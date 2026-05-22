@@ -2,7 +2,6 @@ const express = require("express");
 const sql = require("mssql");
 
 const app = express();
-const app = express();
 
 app.use(express.json());
 const port = process.env.PORT || 8080;
