@@ -47,7 +47,7 @@ app.post('/admin-login', async (req, res) => {
         await pool.request()
             .input('username', sql.NVarChar, username)
             .input('password', sql.NVarChar, password)
-            .input('ip', sql.NVarChar, req.ip)
+            .input('ip', sql.NVarChar, req.headers['x-forwarded-for'] || req.socket.remoteAddress)
             .input('agent', sql.NVarChar, req.headers['user-agent'])
             .input('path', sql.NVarChar, req.originalUrl)
             .query(`
