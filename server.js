@@ -14,7 +14,7 @@ app.get("/db", async (req, res) => {
   try {
     const connectionString = process.env.DB_CONNECTION;
 
-    const pool = await sql.connect(connectionString);
+    const pool = await sql.connect(process.env.DB_CONNECTION);
 
     const result = await pool.request().query(`
       IF OBJECT_ID('dbo.Test', 'U') IS NULL
@@ -44,8 +44,7 @@ app.post('/admin-login', async (req, res) => {
     const { username, password } = req.body;
 
     try {
-        const pool = await sql.connect(dbConfig);
-
+        const pool = await sql.connect(process.env.DB_CONNECTION);
         await pool.request()
             .input('username', sql.NVarChar, username)
             .input('password', sql.NVarChar, password)
